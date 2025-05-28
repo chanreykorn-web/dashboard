@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Login = () => {
+export const Login = () => {
     const [username, setUsername] = React.useState('');
     const [password, setPassword] = React.useState('');
     const [showPassword, setShowPassword] = React.useState(false);
@@ -74,5 +74,3 @@ const Login = () => {
         </div>
     );
 };
-
-export default Login

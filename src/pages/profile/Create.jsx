@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Create = () => {
+export const Create = () => {
     return (
         <div className="">
             <div className="bg-white p-6 rounded-lg shadow-md">
@@ -72,5 +72,3 @@ const Create = () => {
         </div>
     );
 }
-
-export default Create;

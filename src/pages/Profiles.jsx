@@ -1,14 +1,15 @@
 import React from 'react';
-import Breadcrumbs from '../components/Breadcrumbs';
+import { Breadcrumbs } from '../components/Breadcrumbs';
 import { Link } from 'react-router-dom';
 
-const Profiles = () => {
+export const Profiles = () => {
     const data = [
         { id: 1, name: 'chanrey korn', image: 'profile.png', bio: 'null', facebook: 'null', telegram: 'null', instragram: 'null', github: 'null', status: 'Active' },
     ];
 
     return (
         <div>
+            <Breadcrumbs />
             <div className='mb-6'>
                 <Link to='/profile/create' className='bg-blue-600 px-5 py-3 text-white rounded-sm'>
                     Create Profile
@@ -72,5 +73,3 @@ const Profiles = () => {
         </div>
     );
 }
-
-export default Profiles;

@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import Breadcrumbs from '../components/Breadcrumbs';
-import Loading from '../components/Loading';
+import { Breadcrumbs } from '../components/Breadcrumbs';
+import { Loading } from '../components/Loading';
 
-class Dashboard extends Component {
+export class Dashboard extends Component {
     render() {
         return (
             <div>
@@ -13,5 +13,3 @@ class Dashboard extends Component {
         );
     }
 }
-
-export default Dashboard;
