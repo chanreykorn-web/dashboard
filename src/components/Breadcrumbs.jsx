@@ -1,8 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
+
+
 
 export const Breadcrumbs = () => {
     return (
-        <h1>Hello</h1>
+        <div className='mb-5'>
+            <h1>Hi</h1>
+        </div>
     );
 };

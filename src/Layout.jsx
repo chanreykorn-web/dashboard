@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Sidebar from './components/Sidebar';
-import Header from './components/Header';
+import { Header } from './components/Header';
 import Card from './components/Card';
 import DataTable from './components/DataTable';
 import { Outlet } from 'react-router-dom';

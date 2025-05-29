@@ -62,7 +62,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
                     </div>
 
                     <Link
-                        to="/gallary"
+                        to="/gallary/view"
                         onClick={handleLinkClick}
                         className="block py-2 px-4 hover:bg-gray-700 rounded"
                     >

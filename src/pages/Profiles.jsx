@@ -9,7 +9,8 @@ export const Profiles = () => {
 
     return (
         <div>
-            <Breadcrumbs />
+            {/* <Breadcrumbs /> */}
+
             <div className='mb-6'>
                 <Link to='/profile/create' className='bg-blue-600 px-5 py-3 text-white rounded-sm'>
                     Create Profile
@@ -17,7 +18,6 @@ export const Profiles = () => {
                 {/* <button type='submit' className='py-3 bg-blue-600 px-10'></button> */}
             </div>
             <div className="bg-white p-4 rounded-lg shadow-md">
-                {/* <Breadcrumbs /> */}
                 <h2 className="text-2xl font-semibold text-gray-700 mb-4">List Profiles</h2>
                 <div className="overflow-x-auto">
                     <table className="min-w-full divide-y divide-gray-200">

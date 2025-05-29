@@ -5,6 +5,7 @@ import { Dashboard } from './pages/Dashboard';
 import { Profiles } from './pages/Profiles';
 import { Login } from './auth/Login';
 import { Create } from './pages/profile/Create';
+import { Gallery } from './pages/Gallery';
 
 export const App = () => {
   const router = createBrowserRouter([
@@ -23,6 +24,10 @@ export const App = () => {
         {
           path: 'profile/create',
           element: <Create />
+        },
+        {
+          path: 'gallary/view',
+          element: <Gallery />
         },
 
       ])
