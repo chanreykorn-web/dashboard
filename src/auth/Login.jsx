@@ -1,16 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
+import axios from 'axios';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 export const Login = () => {
     const [username, setUsername] = React.useState('');
     const [password, setPassword] = React.useState('');
     const [showPassword, setShowPassword] = React.useState(false);
 
-    const handleLogin = () => {
-        // Simulate login logic (e.g., API call)
-        if (username && password) {
-            alert(`Logging in with Username: ${username}`);
-        } else {
-            alert('Please fill in both fields');
+    const [message, setMessage] = useState('');
+    const navigate = useNavigate();
+    const location = useLocation();
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+            const res = await axios.post('http://localhost:3030/api/login', { username, password });
+            localStorage.setItem('token', res.data.token);
+            const from = location.state?.from?.pathname || '/';
+            navigate(from, { replace: true });
+        } catch (err) {
+            setMessage(err.response?.data?.message || 'Login failed');
         }
     };
 
@@ -64,7 +73,7 @@ export const Login = () => {
                         </div>
                     </div>
                     <button
-                        onClick={handleLogin}
+                        onClick={handleSubmit}
                         className='w-full bg-amber-500 text-white py-2 rounded-md hover:bg-amber-600 transition'
                     >
                         Login

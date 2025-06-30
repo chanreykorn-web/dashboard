@@ -6,12 +6,13 @@ import { Profiles } from './pages/Profiles';
 import { Login } from './auth/Login';
 import { Create } from './pages/profile/Create';
 import { Gallery } from './pages/Gallery';
+import RequireAuth from './auth/RequireAuth';
 
 export const App = () => {
   const router = createBrowserRouter([
     {
       path: '/',
-      element: <Layout />,
+      element: <RequireAuth><Layout /></RequireAuth>,
       children: ([
         {
           index: true,
