@@ -15,13 +15,16 @@
     "@mui/icons-material": "^7.1.0",
     "@mui/material": "^7.1.0",
     "@mui/styled-engine-sc": "^7.1.0",
+    "@mui/x-date-pickers": "^8.6.0",
     "@tailwindcss/vite": "^4.1.7",
     "axios": "^1.10.0",
+    "dayjs": "^1.11.13",
     "lucide-react": "^0.511.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-dropzone": "^14.3.8",
     "react-router-dom": "^7.6.0",
+    "react-toastify": "^11.0.5",
     "styled-components": "^6.1.18"
   },
   "devDependencies": {

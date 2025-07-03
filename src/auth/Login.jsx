@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate, useLocation } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
 
 export const Login = () => {
     const [username, setUsername] = React.useState('');
@@ -14,11 +15,17 @@ export const Login = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const res = await axios.post('http://localhost:3030/api/login', { username, password });
+            const res = await axios.post(`${import.meta.env.VITE_API_URL}/login`, { username, password });
             localStorage.setItem('token', res.data.token);
-            const from = location.state?.from?.pathname || '/';
-            navigate(from, { replace: true });
+            toast.success('Login successful');
+            setTimeout(() => {
+                setMessage('');
+                const from = location.state?.from?.pathname || '/';
+                navigate(from, { replace: true });
+            }, 3500);
         } catch (err) {
+            toast.error('Login failed');
+            console.error('Login error:', err);
             setMessage(err.response?.data?.message || 'Login failed');
         }
     };
@@ -29,6 +36,7 @@ export const Login = () => {
 
     return (
         <div className='w-screen h-screen flex items-center justify-center bg-gray-800 p-8 md:p-0'>
+            <ToastContainer position="top-right" autoClose={3000} />
             <div className='w-[500px] bg-white flex flex-col items-center justify-center p-6 rounded-lg shadow-lg'>
                 <h1 className='text-3xl font-bold mb-6'>Admin Login</h1>
                 <div className='w-full space-y-4'>

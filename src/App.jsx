@@ -7,6 +7,9 @@ import { Login } from './auth/Login';
 import { Create } from './pages/profile/Create';
 import { Gallery } from './pages/Gallery';
 import RequireAuth from './auth/RequireAuth';
+import { Users } from './user/Users';
+import { Product } from './products/Product';
+import CreateProduct from './products/CreateProduct';
 
 export const App = () => {
   const router = createBrowserRouter([
@@ -29,6 +32,18 @@ export const App = () => {
         {
           path: 'gallary/view',
           element: <Gallery />
+        },
+        {
+          path: '/users/view',
+          element: <Users />
+        },
+        {
+          path: 'product',
+          element: <Product />
+        },
+        {
+          path: 'product/create',
+          element: <CreateProduct />
         },
 
       ])
